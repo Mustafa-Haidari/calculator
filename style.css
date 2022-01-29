@@ -2,37 +2,53 @@
     margin: 0;
     padding: 0;
 }
-body{
-    box-sizing: border-box
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .calculator {
-    background: #101010;
-    width: 25em;
-    margin: 5em auto;
+    background:#101010; ;
+    width: 25rem;
+    margin: 2rem auto;
     display: flex;
+    vertical-align: middle;
     flex-direction: column;
-    flex-wrap: wrap;
+    border-radius: 1rem;
 }
 
-.display{
+
+.display {
     background: #222;
     color: #fff;
     text-align: right;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.7em;
+    font-family: inherit;
+    font-size: 2rem;
     height: 6em;
-    padding: 0 .1em;
+    padding: 0 0.5rem;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
+    margin: 1rem;
+    margin-bottom: 0;
 }
 
-.controls{
+.display > div {
+    overflow-wrap: anywhere;
+}
+
+.controls {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: .7em 0;
-    margin: auto 0.5em;
+    margin: auto 0.5rem;
 }
 
 .display .previous-operand {
@@ -42,21 +58,23 @@ body{
 
 .controls button {
     background: #222222;
+    font-family: inherit;
+    font-size: inherit;
     color: white;
-    height: 5.5em;
+    height: 5rem;
     cursor: pointer;
-    margin: 0.5em;
+    margin: 0.5rem;
     border: unset;
     border-radius: .5em;
     outline: unset;
 }
 
 .controls button:hover {
-background: #333333;
+    background: #333333;
 }
 
 .controls button:active {
-    transform: translateY(.5em);
+    background-color: orange;
 }
 
 .controls .teal {
@@ -67,6 +85,10 @@ background: #333333;
     background: #006664;
 }
 
+.controls .teal:active {
+    background: orangered
+}
+
 .controls .equals {
     background: orange;
 }
@@ -75,7 +97,8 @@ background: #333333;
     background: orangered;
 }
 
-.teal, .equals {
+.teal,
+.equals {
     font-weight: bold;
 }
 
@@ -89,5 +112,6 @@ background: #333333;
         width: 100vw;
         height: 100vh;
         margin: auto;
+        border-radius: unset;
     }
 }
